@@ -8,3 +8,10 @@ Sýnidæmi gerð fyrir TÖL306G Vefforritun.
 
 * Leiðbeiningar varðandi notkun á FTP/SFTP má finna á
   [þessari](http://rhi.hi.is/sftp_tengingar_adur_ftp) slóð.
+
+* Hægt er að skoða aðgengi á verkefnunum með WAVE Accessibility tool
+  [hérna](http://wave.webaim.org/).
+
+* Ef þið eruð í vafa með ákveðin element eða viljið læra meira um ákveðin
+  attributes á elementum getið þið skoðað
+  [Mozilla Developer's Network](https://developer.mozilla.org/en-US/).
