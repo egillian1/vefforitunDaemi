@@ -1,0 +1,26 @@
+@media all and (max-width: 350px) {
+  .medium {
+    display: none;
+  }
+  .big {
+    display: none;
+  }
+}
+
+@media all and (min-width: 351px) and (max-width: 720px) {
+  .small {
+    display: none;
+  }
+  .big {
+    display: none;
+  }
+}
+
+@media all and (min-width: 721px) {
+  .small {
+    display: none;
+  }
+  .medium {
+    display: none;
+  }
+}
