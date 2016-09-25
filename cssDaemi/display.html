@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Block versus Inline</title>
+    <link rel="stylesheet" type="text/css" href="display.css">
+  </head>
+  <body>
+    <h1>Block versus inline</h1>
+    <div class="blockWrapper">
+      <p>
+        Div element for containing block elements.
+      </p>
+      <p>
+        This is a paragraph with the typical block characteristics.
+      </p>
+      <p>
+        This is a second paragraph, also with the typical block
+        characteristics.
+      </p>
+      <p>
+        Every paragraph has its own box model for the element.
+      </p>
+    </div>
+
+    <div class="inlineWrapper">
+      <p>
+        Div element for containing inline elements.
+      </p>
+      <p>
+        This is a paragraph that should have block characteristics, but now
+        has inline characteristics.
+      </p>
+      <p>
+        The same applies to this second paragraph. It now has inline
+        characteristics.
+      </p>
+      <p>
+        Every paragraph is collapsed and each one shares its space with the
+        adjacent paragraphs.
+      </p>
+    </div>
+
+    <div class="inlineBlockWrapper">
+      <p>
+        Div element for containing inline-block elements.
+      </p>
+      <p>
+        This is a paragraph that combines block characteristics and inline
+        characteristics.
+      </p>
+    </div>
+  </body>
+</html>

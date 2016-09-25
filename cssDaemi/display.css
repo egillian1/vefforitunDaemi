@@ -1,0 +1,25 @@
+.blockWrapper {
+  background-color: rgb(254, 163, 42);
+  width: 50%;
+  margin: 20px auto;
+}
+
+.inlineWrapper {
+  background-color: rgb(121, 202, 207);
+  width: 50%;
+  margin: 20px auto;
+}
+
+.inlineBlockWrapper {
+  background-color: rgb(187, 36, 212);
+  width: 50%;
+  margin: 20px auto;
+}
+
+.inlineWrapper p {
+  display: inline;
+}
+
+.inlineBlockWrapper p {
+  display: inline-block;
+}
