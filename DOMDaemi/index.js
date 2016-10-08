@@ -12,17 +12,38 @@
   var deleteAllButton = document.getElementById("deleteAll");
   var textField = document.getElementById("thingToDo");
   var itemList = document.getElementById("items");
+  var wrapper = document.getElementById("wrapper");
 
   addItemButton.addEventListener("click", appendItemToList);
   deleteAllButton.addEventListener("click", deleteAllItems);
 
+  console.log("Retrieving previous session entries");
+  // JSON is a format for storing data. When receiving JSON data, the first
+  // thing to do is to parse the data, i.e. convert it from JSON format
+  // back into usable JavaScript code. Here we are getting JSON data from
+  // localStorage under the name "entries" and making it available to
+  // our script. Check the function saveItemsToStorage() to see the opposite.
+  var storedEntries = JSON.parse(window.localStorage.getItem("entries"));
+
+  // Check if any previous entries are present and add them to current list
+  if(storedEntries){
+    for (var i = 0; i < storedEntries.length; i++) {
+      console.log("Previous entry added");
+      appendItemToList(storedEntries[i].text);
+    }
+  }
 
 
-  function appendItemToList(){
+
+  function appendItemToList(externalEntry){
     console.log("Appending item to list");
-
     var text = textField.value;
-    console.log("Content of text field:" + text);
+
+    // Check if toDoItem to be added is from the text field on the page or
+    // from another source (localStorage in this case)
+    if(typeof externalEntry === 'string'){
+      text = externalEntry;
+    }
 
     // Create elements needed to add an item to the to-do list
     var toDoContainer = document.createElement("div");
@@ -48,12 +69,19 @@
     // complete, the content is visible since it is now part of the
     // document (and its DOM tree)
     itemList.appendChild(toDoContainer);
+
+    // Add to-do container and its items to local storage
+    localStorage.setItem('itemList', itemList);
+
+    // Once element has been added, update the localStorage so it contains the
+    // same list as the page
+    saveItemsToStorage();
   }
 
 
 
   function deleteItem(){
-    console.log("Deleting item")
+    console.log("Deleting item");
     // "this" is the Delete Item button in this case ("this" refers to the
     // item that called the function). We don't just want to delete the button,
     // we want to delete the container and everything in it. So, we take the
@@ -62,6 +90,10 @@
     // content is deleted.
     var itemToDelete = this.parentNode;
     itemList.removeChild(itemToDelete);
+
+    // Once element has been removed, update the localStorage so it contains the
+    // same list as the page
+    saveItemsToStorage();
   }
 
 
@@ -81,6 +113,35 @@
     while(itemsToDelete[0]) {
       itemsToDelete[0].parentNode.removeChild(itemsToDelete[0]);
     }
+
+    // Once elements have been removed, update the localStorage so it contains the
+    // same list as the page
+    saveItemsToStorage();
+  }
+
+
+
+  function saveItemsToStorage() {
+    var objectArray = [];
+    var items = document.querySelectorAll('.toDoItem');
+
+    // Take all toDoItem elements, extract the text within, create an object
+    // for each text and add the object to the array
+    for (var i = 0; i < items.length; i++) {
+      var currentParagraph = items[i].querySelector("p");
+      var paragraphText = currentParagraph.innerText;
+      var tmpObject = {text: paragraphText};
+      objectArray.push(tmpObject);
+    }
+
+    // Here we are taking data (our array of objects) and "encoding" them into
+    // JSON format to be stored in localStorage.
+    var stringified = JSON.stringify(objectArray);
+
+    // Once the encoding is complete, we store the variable under "entries". It
+    // is now available in the global scope of the document and the JSON data
+    // can now be accessed using localStorage.entries 
+    localStorage.setItem("entries", stringified);
   }
 
 })();

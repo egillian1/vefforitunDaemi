@@ -1,0 +1,15 @@
+{
+  "name": "npm-daemi",
+  "version": "1.0.0",
+  "description": "Example of how to use npm to create basic project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Egill Ian Gudmundsson",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1"
+  }
+}
