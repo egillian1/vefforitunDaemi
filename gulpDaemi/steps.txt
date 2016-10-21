@@ -1,0 +1,47 @@
+# Gulpfile setup
+
+## Browsersync
+* Run npm init to create package management
+* Install browsersync for gulp with npm install browser-sync gulp --save-dev
+* Input stuff off of https://www.browsersync.io/docs/gulp into
+  function to be used (serve in this case)
+* Add gulp.watch commands to add triggers for when the module
+  reloads
+* Run browsersync via command gulp serve
+* Also possible to add watching capabilities for javascript
+  by using browserify. Install npm install -g browserify
+* Need to use npm install --save-dev gulp-browserify
+* And npm install --save-dev gulp-uglify
+
+## Sass
+* Install sass module with npm install gulp-sass --save-dev
+* Use code provided on https://www.npmjs.com/package/gulp-sass
+  and paste into gulpfile.js with slight modifications
+* Now possible to use gulp sass to convert sass files to css
+
+## Eslint (lint for javascript)
+* Install via command npm install gulp-eslint
+* Copy code from npm page https://www.npmjs.com/package/gulp-eslint
+* Now possible to use gulp lint-javascript to use lint on javascript files
+* May require you to install babel-eslint via npm babel-eslint --save-dev
+
+## Babel
+* Install via npm install --save-dev gulp-babel babel-preset-es2015
+* Copy code from https://www.npmjs.com/package/gulp-babel and adjust paths
+* Can now run gulp babel
+
+## Stylelint (lint for scss)
+* Install pure stylelint via npm install stylelint --save-dev
+* Install for gulp via npm install gulp-stylelint --save-dev
+* Install postcss via npm install gulp-postcss --save-dev
+* Install postcss for sass via npm install postcss-scss --save-dev
+* Install postcss reporter via npm install postcss-reporter --save-dev
+* Use following code in gulpfile http://www.creativenightly.com/2016/02/How-to-lint-your-css-with-stylelint/#setup
+* Use following code for rules https://github.com/stylelint/stylelint-config-standard/blob/master/index.js
+* Append rules found in stlyeintrc for 
+
+# Receive data from APIS
+* Simplest method involves using ajax call done by using jquery
+* Install JQuery as front-end dependency via npm install jquery
+* Add JQuery as script to frontend
+* Use Ajax call as described on apis.is

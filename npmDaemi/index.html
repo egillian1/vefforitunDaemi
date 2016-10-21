@@ -20,6 +20,70 @@
   <body>
     <h1>Hello, world!</h1>
 
+    <h1><a id="NodeJS_and_Node_Package_Manager_npm_0"></a>NodeJS and Node Package Manager (npm)</h1>
+    <h2><a id="Start_2"></a>Start</h2>
+    <ul>
+    <li>Install nodeJS through whatever you want
+    <a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a></li>
+    <li>Create folder for project (root folder)</li>
+    <li>Navigate to folder for project in cmd and use
+    following command:
+    <code>npm init</code></li>
+    <li>Follow prompts in cmd window to create
+    dependencies (package.json)</li>
+    <li>All dependencies should now be kept in package.json</li>
+    </ul>
+    <h2><a id="Add_dependencies_for_Bootstrap_14"></a>Add dependencies for Bootstrap</h2>
+    <ul>
+    <li>Find package that you want to use
+    via <a href="https://www.npmjs.com/">https://www.npmjs.com/</a></li>
+    <li>For this example we will use
+    Bootstrap <a href="https://www.npmjs.com/package/bootstrap">https://www.npmjs.com/package/bootstrap</a></li>
+    <li>This is a package our end-product will use so we use
+    the following command:
+    <code>npm install bootstrap --save</code></li>
+    <li>Check if any errors came up while installing and
+    deal with them</li>
+    <li>Check in your project root folder. It should now
+    contain a folder called node_modules where
+    Bootstrap is installed</li>
+    <li>Bootstrap also requires JQuery so we will download
+    that as well using:
+    <code>npm install jquery --save</code></li>
+    <li>Handle anny errors, you should now have JQuery in
+    node_modules as well</li>
+    <li>Get the starter template from the Bootstrap
+    website <a href="http://getbootstrap.com/getting-started/#template">http://getbootstrap.com/getting-started/#template</a></li>
+    <li>Change the paths in the template to correspond to
+    your node_modules paths</li>
+    <li>You now have a site with Bootstrap and Jquery</li>
+    </ul>
+    <h2><a id="Add_dependencies_for_Browsersync_39"></a>Add dependencies for Browsersync</h2>
+    <ul>
+    <li>Browsersync is a package for developers, not for the
+    end product. In this case, we use the following command:
+    <code>npm install -g browser-sync --save-dev</code>
+    This makes browsersync available on a global scope (shell
+    access) and saves it as a development tool in your packages</li>
+    <li>You now have browsersync installed and can use it when
+    writing code. Use the following command:
+    <code>browser-sync start --server --files &quot;*&quot;</code>
+    This command tells browsersync to watch all the files in
+    your project. Once a change is made, the browser automatically
+    reloads to the newest version</li>
+    </ul>
+    <h2><a id="Loading_dependencies_from_a_NodeJS_project_53"></a>Loading dependencies from a NodeJS project</h2>
+    <ul>
+    <li>When receiving a project from another party, it will
+    usually not have a node_modules folder, just the package.json
+    file</li>
+    <li>The trick here is to navigate to the folder in a shell and
+    use the following command:
+    <code>npm install</code></li>
+    <li>Now npm installs the packages for you and you can use the
+    program</li>
+    </ul>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
